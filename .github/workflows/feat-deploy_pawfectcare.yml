@@ -1,7 +1,7 @@
 # Docs for the Azure Web Apps Deploy action: https://github.com/Azure/webapps-deploy
 # More GitHub Actions for Azure: https://github.com/Azure/actions
 
-name: Build and deploy JAR app to Azure Web App - PawfectCare
+name: Build and deploy JAR app to Azure Web App - pawfectcare
 
 on:
   push:
@@ -25,7 +25,7 @@ jobs:
           distribution: 'microsoft'
 
       - name: Build with Maven
-        run: mvn clean install -DskipTests
+        run: mvn clean install
 
       - name: Upload artifact for deployment job
         uses: actions/upload-artifact@v4
@@ -52,15 +52,15 @@ jobs:
       - name: Login to Azure
         uses: azure/login@v2
         with:
-          client-id: ${{ secrets.AZUREAPPSERVICE_CLIENTID_784A4FF6C87D4EE7BF46FADCBED075A0 }}
-          tenant-id: ${{ secrets.AZUREAPPSERVICE_TENANTID_8337B5B9B18A40B1B81381F1D06CE89D }}
-          subscription-id: ${{ secrets.AZUREAPPSERVICE_SUBSCRIPTIONID_AE6A9C8FDE1648FE9D98CDF58E646E8B }}
+          client-id: ${{ secrets.AZUREAPPSERVICE_CLIENTID_E1ED1F11C6AC4085B634D369C4D4E259 }}
+          tenant-id: ${{ secrets.AZUREAPPSERVICE_TENANTID_E32536E7D269464AB402B748FCECE87E }}
+          subscription-id: ${{ secrets.AZUREAPPSERVICE_SUBSCRIPTIONID_98C92D6A17C941AAA928DEB46F515B59 }}
 
       - name: Deploy to Azure Web App
         id: deploy-to-webapp
         uses: azure/webapps-deploy@v3
         with:
-          app-name: 'PawfectCare'
+          app-name: 'pawfectcare'
           slot-name: 'Production'
           package: '*.jar'
           
