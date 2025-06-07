@@ -1,0 +1,8 @@
+package pe.upc.pawfectcarebackend.feedback.interfaces.rest.resources;
+
+public record ReviewResource(
+        Long id,
+        String content,
+        Integer rating,
+        Long veterinarianId) {
+}

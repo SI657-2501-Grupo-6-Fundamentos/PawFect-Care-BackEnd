@@ -26,7 +26,6 @@ import static org.springframework.http.MediaType.APPLICATION_JSON_VALUE;
 @Tag(name = "Pets", description = "Pet Management Endpoints")
 @CrossOrigin(origins = {"https://pawfect-care-app-web.web.app","http://localhost:4200"})
 public class PetsController {
-
     private final PetQueryService petQueryService;
     private final PetCommandService petCommandService;
     public PetsController(PetQueryService petQueryService,PetCommandService petCommandService) {

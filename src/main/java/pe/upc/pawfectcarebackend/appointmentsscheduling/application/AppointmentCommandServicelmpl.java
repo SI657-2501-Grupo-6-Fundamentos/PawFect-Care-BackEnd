@@ -3,13 +3,11 @@ package pe.upc.pawfectcarebackend.appointmentsscheduling.application;
 import org.springframework.stereotype.Service;
 import pe.upc.pawfectcarebackend.appointmentsscheduling.application.acl.ExternalPetService;
 import pe.upc.pawfectcarebackend.appointmentsscheduling.domain.model.aggregates.Appointment;
-import pe.upc.pawfectcarebackend.appointmentsscheduling.domain.model.aggregates.MedicalAppointment;
 import pe.upc.pawfectcarebackend.appointmentsscheduling.domain.model.commands.CreateAppointmentCommand;
 import pe.upc.pawfectcarebackend.appointmentsscheduling.domain.model.commands.UpdateAppointmentCommand;
 import pe.upc.pawfectcarebackend.appointmentsscheduling.domain.services.AppointmentCommandService;
 import pe.upc.pawfectcarebackend.appointmentsscheduling.infrastructure.persistence.jpa.repositories.AppointmentRepository;
 import pe.upc.pawfectcarebackend.appointmentsscheduling.infrastructure.persistence.jpa.repositories.MedicalAppointmentRepository;
-import pe.upc.pawfectcarebackend.petmanagement.application.acl.ExternalMedicalHistoryService;
 import pe.upc.pawfectcarebackend.petmanagement.domain.exceptions.PetNotFoundException;
 import pe.upc.pawfectcarebackend.petmanagement.domain.model.aggregates.Pet;
 
@@ -20,7 +18,6 @@ public class AppointmentCommandServicelmpl implements AppointmentCommandService 
 
     private final AppointmentRepository appointmentRepository;
     private final ExternalPetService externalPetService;
-    private final MedicalAppointmentRepository medicalAppointmentRepository;
 
     public AppointmentCommandServicelmpl(
             AppointmentRepository appointmentRepository,
@@ -30,7 +27,6 @@ public class AppointmentCommandServicelmpl implements AppointmentCommandService 
     ) {
         this.appointmentRepository = appointmentRepository;
         this.externalPetService = externalPetService;
-        this.medicalAppointmentRepository = medicalAppointmentRepository;
     }
 
     @Override

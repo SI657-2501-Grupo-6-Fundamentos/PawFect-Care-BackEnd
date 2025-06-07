@@ -44,8 +44,6 @@ public class Pet extends AuditableAbstractAggregateRoot<Pet> {
     @JoinColumn(name = "medical_history_id")
     private MedicalHistory medicalHistory;
 
-
-
     public Pet() {
         this.petName = Strings.EMPTY;
         this.birthDate = LocalDate.now();
